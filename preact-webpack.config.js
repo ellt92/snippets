@@ -8,7 +8,7 @@ const ENV = process.env.NODE_ENV || 'production';
 module.exports = {
     context: path.resolve(__dirname, './src'),
     entry: {
-        app: './index.jsx',
+        bundle: './index.jsx',
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -30,7 +30,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx?$/,
-                include: path.resolve(__dirname, './app'),
+                include: path.resolve(__dirname, './src'),
                 exclude: [/node_modules/],
                 use: [{
                     loader: 'babel-loader',
